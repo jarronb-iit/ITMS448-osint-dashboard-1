@@ -17,10 +17,6 @@ const validationSchema = yup.object().shape({
     .string("Host must be a number")
     .max(40, "Host cannot exceed 21 characters")
     .required("Host is required"),
-  port: yup
-    .number("Port must be a number")
-    .positive("Must be a postive number")
-    .required("Port is required"),
   actionString: yup
     .string("Action Page must be a string")
     .max(24, "Action cannont be more than 14 characters")
@@ -63,20 +59,7 @@ const inputsModels = {
       },
       component: "TextField"
     },
-    {
-      id: "port",
-      name: "port",
-      label: "Port",
-      type: "input",
-      columnSpan: { xs: 12, sm: 12, md: 3 },
-      formControlProps: {
-        fullWidth: true
-      },
-      inputProps: {
-        // disabled: true
-      },
-      component: "TextField"
-    },
+    
     {
       id: "action-string",
       name: "actionString",
