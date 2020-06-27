@@ -15,7 +15,6 @@ const initialValues = {
 const validationSchema = yup.object().shape({
   host: yup
     .string("Host must be a number")
-    .max(40, "Host cannot exceed 21 characters")
     .required("Host is required"),
   actionString: yup
     .string("Action Page must be a string")
