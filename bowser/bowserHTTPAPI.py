@@ -14,7 +14,7 @@ from bowserUtils import BOARDS_4PLEBS
 from contentFlagger import ALL_CONTENT_FLAGGERS, ContentFlagger
 from csvWriter import CSVPostWriter, JSONPostWriter
 
-app = Flask(__name__, static_folder="../client/build/static", template_folder="../client/build/")
+app = Flask(__name__)
 CORS(app)
 
 
@@ -266,11 +266,6 @@ def generate_4plebs_json():
 
 	return jsonify(JSONPostWriter.convert_csv_string_to_json(csvString))
 
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-	return render_template('index.html')
 
 
 if __name__ == '__main__':
