@@ -1,1 +1,1 @@
-web: cd bowser && gunicorn bowserHTTPAPI:app
+web: cd bowser && python bowserHTTPAPI.py
